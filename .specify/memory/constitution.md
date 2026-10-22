@@ -1,50 +1,66 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Gestor de Hoja de Vida Institucional Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Desarrollo guiado por especificaciones
+Toda funcionalidad debe iniciar con requisitos claros, revisados y aprobados antes de planificar la implementación.
+El plan técnico y las tareas derivadas deben revisarse y aceptarse antes de comenzar el desarrollo.
+Se seguirá el flujo de trabajo de Spec Kit: Constitución → Especificación → Planificación → Tareas → Implementación.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Calidad y pruebas
+El código debe ser modular, mantenible y tipado estrictamente.
+Se usarán class‑validator y class‑transformer para la validación de datos.
+Cada unidad debe contar con pruebas unitarias automatizadas en Jest; no se declarará una prueba como completada sin evidencia de ejecución.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Seguridad y protección de datos
+Autenticación mediante Passport y JWT, contraseñas hash con bcrypt.
+Roles propuestos: FUNCIONARIO, TALENTO_HUMANO y ADMIN – pendientes de validación antes de fijarlos como definitivos.
+Protección de datos personales conforme a la normativa vigente; gestión de secretos el mecanismo de gestión de secretos está pendiente de definición.
+Se revisará el control de acceso en cada endpoint.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Trazabilidad de requisitos y gestión de cambios
+Cada requisito será registrado en la Spec y vinculado a los tickets de tareas.
+Los cambios requerirán revisión de impacto, aprobación del responsable de arquitectura y actualización de la documentación de la Constitución y la Especificación.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Métricas de IA
+Se contempla el uso de speckit‑metricas v0.3.0 para medir esfuerzo, tiempo, costo y código generado por IA.
+Su instalación, compatibilidad con Spec Kit y los hooks necesarios deberán verificarse antes de considerarla operativa.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Tecnologías y arquitectura
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- Framework: NestJS
+- Lenguaje: TypeScript, Node.js
+- Base de datos: PostgreSQL (ORM: Prisma)
+- Validación: class‑validator, class‑transformer
+- Seguridad: Passport, JWT, bcrypt
+- Documentación API: Swagger / OpenAPI
+- Pruebas: Jest
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+> Pendiente: versiones específicas de cada tecnología.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Flujo de trabajo y criterios de calidad
+
+1. Constitución → define los principios y normas del proyecto.
+2. Especificación → requisitos detallados y criterios de aceptación.
+3. Planificación → descomposición en tareas y asignación.
+4. Tareas → implementación de funcionalidades individuales.
+5. Implementación → desarrollo siguiendo los principios; revisión por pares y pruebas automatizadas antes del merge.
+
+**Criterios de calidad**
+- Modularidad y separación de responsabilidades.
+- Tipado estricto con TypeScript.
+- Validación de datos en DTOs.
+- Pruebas unitarias y de integración automatizadas.
+- Documentación completa vía Swagger.
+
+> Pendiente: definición de CI/CD y pipelines de auditoría.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+La Constitución es la fuente de verdad; cualquier cambio requiere propuesta escrita y aprobación mediante pull request (una revisión es suficiente).
+Las actualizaciones deben incluir registro de versión y fecha de ratificación; si la fecha es desconocida, se marcará como [PENDING_RATIFICATION_DATE].
+Se realizará una revisión trimestral de la Constitución para validar su alineación con las decisiones del proyecto.
+Las desviaciones de los principios deberán documentarse y ser aprobadas por el responsable de arquitectura.
+El cumplimiento se verificará mediante auditorías internas cuando sea necesario, no como obligación para cada release mayor.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: [PENDING_VERSION] | **Ratified**: [PENDING_RATIFICATION_DATE] | **Last Amended**: 2026-10-22
